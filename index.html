@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌅 Mirando Lejos | Coaching & Consultoría – Desarrollo Personal y Profesional</title>
+  <meta name="description" content="Coaching ontológico, ejecutivo, laboral y vocacional. Consultoría empresarial y auditorías de calidad. Hernán Pauletti – más de 30 años de experiencia en gestión y liderazgo. Entrevista inicial sin cargo."/>
+  <meta name="keywords" content="coach en Buenos Aires, coaching laboral, coaching ontológico, coaching ejecutivo, liderazgo personal, motivación profesional, gestión de calidad, consultoría en empresas, coaching vocacional"/>
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://mirandolejos.com/"/>
+  <meta property="og:title" content="Mirando Lejos | Coaching & Consultoría"/>
+  <meta property="og:description" content="Coaching y consultoría para el desarrollo personal y profesional. Entrevista inicial sin cargo."/>
+  <meta property="og:image" content="https://mirandolejos.com/images/og-image.jpg"/>
+
+  <!-- TailwindCSS + paleta original -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {50:'#faf7f0',100:'#e8e1d1',200:'#d6cbb2',300:'#c4b593',400:'#b29f74',500:'#a08955',600:'#826e44',700:'#645333',800:'#463822',900:'#281d11'},
+            secondary:{50:'#f3f5ef',100:'#dde5d3',200:'#c7d5b7',300:'#b1c59b',400:'#9bb57f',500:'#85a563',600:'#6a844f',700:'#50633b',800:'#354227',900:'#1b2113'},
+            accent:{50:'#fdf8e6',100:'#f9e9b9',200:'#f5da8c',300:'#f1cb5f',400:'#edbc32',500:'#e9ad05',600:'#ba8a04',700:'#8c6803',800:'#5d4502',900:'#2f2301'}
+          },
+          fontFamily:{sans:['Inter','system-ui','sans-serif'], serif:['Merriweather','serif']}
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons (opcional si ya los tenías) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <style>
+    .bg-pattern{background:#faf7f0;}
+    .fade-in{opacity:0; transform:translateY(10px); transition:all .6s ease}
+    .fade-in.appear{opacity:1; transform:none}
+  </style>
+</head>
+<body class="font-sans text-gray-800" id="top">
+  <!-- HEADER -->
+  <header class="bg-white border-b sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="text-xl font-bold text-primary-700">Mirando Lejos</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#identidad" class="hover:text-primary-700">Identidad</a>
+        <a href="#servicios" class="hover:text-primary-700">Servicios</a>
+        <a href="#contacto" class="hover:text-primary-700">Contacto</a>
+      </nav>
+      <button id="mobile-menu-button" class="md:hidden px-3 py-2 border rounded">Menú</button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden border-t">
+      <div class="px-4 py-3 space-y-2">
+        <a href="#identidad" class="block">Identidad</a>
+        <a href="#servicios" class="block">Servicios</a>
+        <a href="#contacto" class="block">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO (resumido) -->
+  <section class="bg-pattern">
+    <div class="container mx-auto px-4 py-16">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-primary-700">Coaching & Consultoría</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl">Entrevista inicial sin cargo para alinear objetivos y plan de acción.</p>
+      <div class="mt-6 flex gap-3">
+        <a href="https://wa.me/5491135908140" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded">WhatsApp</a>
+        <a href="#contacto" class="border border-primary-700 text-primary-800 hover:bg-primary-700 hover:text-white px-5 py-2.5 rounded">Solicitar entrevista</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- … (identidad, servicios y demás secciones originales) … -->
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="section-padding bg-pattern">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold text-primary-700 mb-4">📞 Contacto</h2>
+        <div class="w-20 h-1 bg-accent-500 mx-auto"></div>
+        <p class="text-gray-600 max-w-2xl mx-auto mt-4">Estoy aquí para acompañarte en tu proceso de transformación. Agenda tu entrevista inicial sin cargo y descubramos juntos cómo alcanzar tus objetivos.</p>
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8">
+        <!-- FORMULARIO (actualizado) -->
+        <div class="md:w-1/2 fade-in">
+          <form id="contact-form" class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-lg"
+                action="https://formsubmit.co/info@mirandolejos.com.ar" method="POST" target="_self" novalidate>
+            <!-- Ajustes FormSubmit -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <!-- Honeypot -->
+            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700">Nombre</label>
+              <input type="text" name="name" required class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700">Email</label>
+              <input type="email" name="email" required class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500">
+            </div>
+            <div class="mb-4">
+              <label class="block text-sm font-medium text-gray-700">Mensaje</label>
+              <textarea name="message" rows="4" required class="mt-1 w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-primary-500"></textarea>
+            </div>
+
+            <button id="submit-btn" type="submit" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md font-medium w-full">Enviar</button>
+          </form>
+
+          <!-- Mensaje de confirmación inline (igual que tu diseño) -->
+          <div id="form-message" class="hidden max-w-lg mx-auto mt-6 p-4 bg-green-100 text-green-700 rounded text-center">
+            ✅ ¡Gracias por enviar el formulario!<br>
+            <a href="#top" class="text-blue-600 underline">Volver a la página principal</a>
+          </div>
+        </div>
+
+        <!-- Otras formas de contacto (con Administración agregado) -->
+        <div class="md:w-1/2 fade-in">
+          <div class="bg-white rounded-lg p-6 shadow-md h-full">
+            <h3 class="text-xl font-semibold text-secondary-700 mb-6">Otras formas de contactarme</h3>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0 mr-4">
+                  <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">WhatsApp</h4>
+                  <a href="https://wa.me/5491135908140" target="_blank" class="text-primary-600 hover:text-primary-800">+54 9 11 3590 8140</a>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0 mr-4">
+                  <i class="fa-solid fa-envelope text-blue-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Email (general)</h4>
+                  <a href="mailto:info@mirandolejos.com.ar" class="text-primary-600 hover:text-primary-800">info@mirandolejos.com.ar</a>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0 mr-4">
+                  <i class="fa-solid fa-briefcase text-yellow-600 text-xl"></i>
+                </div>
+                <div>
+                  <h4 class="font-medium text-gray-800">Administración</h4>
+                  <a href="mailto:administracion@mirandolejos.com.ar" class="text-primary-600 hover:text-primary-800">administracion@mirandolejos.com.ar</a>
+                </div>
+              </div>
+
+              <!-- (redes/entrevista como en tu original) -->
+              <div class="mt-8 pt-6 border-t border-gray-200">
+                <h4 class="font-medium text-gray-800 mb-4">También podés encontrarme en:</h4>
+                <div class="flex space-x-4">
+                  <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary-100 hover:text-primary-600 transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary-100 hover:text-primary-600 transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                  <a href="#" class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary-100 hover:text-primary-600 transition"><i class="fab fa-instagram text-xl"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /col derecha -->
+      </div><!-- /flex -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- FOOTER (igual estructura original) -->
+  <footer class="bg-primary-800 text-white py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div>
+          <p class="text-primary-200">© 2025 Mirando Lejos - Coaching & Consultoría. Todos los derechos reservados.</p>
+        </div>
+        <div class="flex gap-4 text-primary-200 text-sm">
+          <a href="#" class="hover:text-white">Política de Privacidad</a>
+          <a href="#" class="hover:text-white">Aviso Legal</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/5491135908140" target="_blank" class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-600 hover:bg-green-700 text-white flex items-center justify-center shadow-lg transition z-50">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+  <!-- Scripts originales + envío del form sin redirección -->
+  <script>
+    // Mobile menu
+    document.getElementById('mobile-menu-button').addEventListener('click', function () {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobile-menu a').forEach(link=>{
+      link.addEventListener('click',()=>document.getElementById('mobile-menu').classList.add('hidden'));
+    });
+
+    // Animaciones scroll
+    function checkFade(){
+      document.querySelectorAll('.fade-in').forEach(el=>{
+        const p=el.getBoundingClientRect();
+        if(p.top < innerHeight - 100){ el.classList.add('appear'); }
+      });
+    }
+    addEventListener('load',checkFade); addEventListener('scroll',checkFade);
+
+    // Estado del botón (como tu original) + envío real
+    const form = document.getElementById('contact-form');
+    const btn  = document.getElementById('submit-btn');
+    const msg  = document.getElementById('form-message');
+
+    if(form){
+      form.addEventListener('submit', async function(e){
+        e.preventDefault();              // evita redirección
+        btn.innerHTML = 'Enviando…';     // :contentReference[oaicite:4]{index=4}
+        btn.disabled  = true;
+
+        try{
+          const data = new FormData(form);
+          // Enviamos a FormSubmit; con no-cors la response es opaca pero el envío se realiza
+          await fetch(form.action, { method:'POST', body:data, mode:'no-cors' });
+          form.reset();
+          msg.classList.remove('hidden'); // muestra éxito inline (como tu UX original) :contentReference[oaicite:5]{index=5}
+          btn.innerHTML = 'Enviar';
+          btn.disabled = false;
+        }catch(err){
+          btn.innerHTML = 'Reintentar';
+          btn.disabled = false;
+          console.error(err);
+        }
+      });
+    }
+  </script>
+</body>
+</html>
