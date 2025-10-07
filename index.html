@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>🌅 Mirando Lejos | Coaching & Consultoría</title>
+  <meta name="description" content="Coaching y consultoría. Entrevista inicial sin cargo.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  </style>
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- NAV -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <span class="font-bold text-xl text-amber-700">Mirando Lejos</span>
+      <a href="#contacto" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm">Contacto</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 py-16 md:py-20">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-amber-800">🌅 Mirando Lejos</h1>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl">Coaching & Consultoría para tu desarrollo personal y profesional. Entrevista inicial sin cargo.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-14">
+    <div class="max-w-5xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-amber-800 mb-4">Contacto</h2>
+      <p class="text-gray-600 mb-6">Completá el formulario y te responderemos a la brevedad.</p>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Formulario -->
+        <div class="bg-white rounded-xl shadow p-6">
+          <form id="contactForm"
+                action="https://formsubmit.co/info@mirandolejos.com.ar"
+                method="POST" target="_self" novalidate>
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="table">
+            <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off">
+
+            <label class="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
+            <input name="nombre" type="text" required
+                   class="w-full mb-4 rounded-lg border-gray-300 focus:ring-amber-600 focus:border-amber-600">
+
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input name="email" type="email" required
+                   class="w-full mb-4 rounded-lg border-gray-300 focus:ring-amber-600 focus:border-amber-600">
+
+            <label class="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
+            <textarea name="mensaje" rows="4" required
+                      class="w-full mb-6 rounded-lg border-gray-300 focus:ring-amber-600 focus:border-amber-600"></textarea>
+
+            <button id="submitBtn" type="submit"
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
+              Enviar
+            </button>
+
+            <div id="successBox" class="hidden mt-4 rounded-lg bg-green-50 text-green-700 px-4 py-3">
+              ✅ ¡Gracias por enviar el formulario! <a href="#top" class="underline">Volver</a>
+            </div>
+            <div id="errorBox" class="hidden mt-4 rounded-lg bg-red-50 text-red-700 px-4 py-3">
+              ❌ Ocurrió un problema al enviar. Por favor, probá de nuevo.
+            </div>
+          </form>
+        </div>
+
+        <!-- Datos de contacto -->
+        <div class="p-6">
+          <h3 class="font-semibold text-lg text-gray-800 mb-3">Otros medios de contacto</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>📧 <b>General:</b> <a href="mailto:info@mirandolejos.com.ar" class="text-amber-700 underline">info@mirandolejos.com.ar</a></li>
+            <li>📧 <b>Administración:</b> <a href="mailto:administracion@mirandolejos.com.ar" class="text-amber-700 underline">administracion@mirandolejos.com.ar</a></li>
+            <li>💬 WhatsApp: <a href="https://wa.me/5491135908140" class="text-green-700 underline" target="_blank">+54 9 11 3590 8140</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="border-t">
+    <div class="max-w-5xl mx-auto px-4 py-10 text-sm text-gray-500">
+      © 2025 Mirando Lejos. Todos los derechos reservados.
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    (function () {
+      const form = document.getElementById('contactForm');
+      const btn  = document.getElementById('submitBtn');
+      const ok   = document.getElementById('successBox');
+      const bad  = document.getElementById('errorBox');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        bad.classList.add('hidden');
+        ok.classList.add('hidden');
+        btn.disabled = true;
+        const original = btn.textContent;
+        btn.textContent = 'Enviando…';
+        const data = new FormData(form);
+        try {
+          await fetch(form.action, { method: 'POST', body: data, mode: 'no-cors' });
+          ok.classList.remove('hidden');
+          form.reset();
+          btn.textContent = original;
+          btn.disabled = false;
+        } catch (err) {
+          bad.classList.remove('hidden');
+          btn.textContent = 'Reintentar';
+          btn.disabled = false;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
